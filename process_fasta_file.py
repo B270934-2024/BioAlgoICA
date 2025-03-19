@@ -56,7 +56,7 @@ def process_fasta_file(fastafile, processfunction, max_scores,ats =None):
 
                 # we are ending the processing of a seq
                 t3=time.time()
-                score = processfunction( myline)
+                score = processfunction(myline)
                 t4 =time.time()
                 if ats is not None:
                     # store the score

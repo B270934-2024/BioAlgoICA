@@ -1,3 +1,4 @@
+#!/bin/python3
 from xdrlib import raise_conversion_error
 
 print("**********************************************************************************")
@@ -32,22 +33,19 @@ ddist = bl.BLOSUM(int(programme_settings.settings["BLAST"]["blosum"]))
 
 max_extension_length =int(programme_settings.settings["BLAST"]["max_extension_length"])
 
-qsequence = programme_settings.settings["DEFAULT"]["query_sequence"]
-qsequence =qsequence.upper()
+#qsequence = programme_settings.settings["DEFAULT"]["query_sequence"]
+#qsequence =qsequence.upper()
 
 #this can now become a BLAST object that ranks the seqs based upon a simple score
 #SW alignment only needs to be performed at the end
 #UP TO Here
 
-query_sequence = tdict.create_word_dict(qsequence)
+#query_sequence = tdict.create_word_dict(qsequence)
 
 aligntime = 0
 max_scores = int(programme_settings.settings["BLAST"]["max_scores"])
 max_alignments = int(programme_settings.settings["BLAST"]["max_alignments"])
 word_size =int(programme_settings.settings["BLAST"]["word_size"])
-lib_seqs =int(programme_settings.settings["DEFAULT"]["current_library_seq_count"])
-lib_seq_length = int(programme_settings.settings["DEFAULT"]["current_library_size"])
-
 def extend_diagonal(pos_s0_s1,s0,s1):
  #   SW.dist is the current distance matrix
     global dist
@@ -59,11 +57,14 @@ def extend_diagonal(pos_s0_s1,s0,s1):
 #extend until the edge is reached or currentscore==0
 # first word residues are from the matching triplet so must exist
 # they are also to the right of the co-ordinate
-
+    
     p1 = right_pos[0]
     p2 = right_pos[1]
 
     cscore = 0
+    if p1 + word_size > len(s0) or p2 + word_size > len(s1):
+        # You might decide to return a default value, like 0, or handle it differently.
+        return 0
     for i in range(0,word_size):
         right_pos = (p1 +i,p2+i)
         r1 = s0[right_pos[0]]
@@ -136,7 +137,6 @@ def process_blast(myline_database):
    #add some BLAST  stuff here
     res = []
     for i in range(0, len(myline_database)):
-
         s = myline_database[i:i + word_size]
         if len(s) % word_size != 0:
             continue
@@ -223,8 +223,9 @@ def process_blast(myline_database):
 #process the file
 def process_fasta_file():
     global aligner_timer_secs
-
-    res = pff.process_fasta_file(programme_settings.settings["DEFAULT"]["database"], process_blast, max_scores,aligner_timer_secs)
+    #original filepath = programme_settings.settings["DEFAULT"]["database"]
+    global database
+    res = pff.process_fasta_file(database, process_blast, max_scores,aligner_timer_secs)
 
 
     #change the order to print the best result first!
@@ -266,7 +267,7 @@ def print_final_results(res):
 
 
     #write the raw data to a file
-    with open("logs\BLsearch.csv", 'w') as outputfile:
+    with open("BLsearch.csv", 'w') as outputfile:
         outputfile.write("Name\tSWScore\tExscore\tBitScore\tExpect\tSeqIndex"+os.linesep)
 
         for i in res2:
@@ -311,6 +312,8 @@ def print_final_results(res):
     print("~~~~~~~~~Finished~~~~~~~~~")
 
 def blast101_run():
+    import traceback
+    traceback.print_stack()
     init_print_timer()
 
     t1 = time.time()
@@ -344,34 +347,71 @@ def print_timer():
 def init_print_timer():
     aligner_timer_secs["Fastatime"] =0
     aligner_timer_secs["Elapsedtime"] = 0
+    
+    
+def validate_sequence(seq):
+    """Check if the sequence contains only valid amino acid characters."""
+    return all(residue.upper() in aminoacidlist for residue in seq)
+    
+def get_fasta_from_file(filepath):
+    with open(filepath,"r") as fasta:
+       for record in SeqIO.parse(fasta, "fasta"):
+           if validate_sequence(str(record.seq).upper()):
+               return record.seq
+           else:
+               return None
+       return None
 
+allseqs=[]
+lib_seqs_list=[]
 count=0
 check=0
 aminoacidlist=['A','R','N','D','C','E','Q','G','H','I','L','K','M','F','P','S','T','W','Y','V','B','Z']
-if sys.argv[1] is not None and isinstance(sys.argv[1],str):
-    arg1=sys.argv[1]
-    arg2=sys.argv[2]
-    if arg1 == "-h":
-        print("USAGE: blast101_run [Sequence / Path to FASTA file] [Database file]")
-        exit()
-    elif os.path.isfile(arg1) and re.match(r".fasta$",f"{arg1}"):
-        with open(f"{arg1}","r") as fasta:
-            for record in SeqIO.parse(fasta, "fasta"):
-                query_sequence = str(record.seq)
-                check=1
-    elif arg1[0] in aminoacidlist and arg1[-1] in aminoacidlist:
-        for x in range(len(arg1)):
-            if arg1[x].upper() in aminoacidlist:
-                count+=1
-        if count==len(arg1):
-            query_sequence=arg1.upper()
-            check=1
-    if os.path.isfile(sys.argv[2]) and check==1:
-        blast101_run()
+if __name__ == "__main__":
+    print("DEBUG: Running script...")
+    if len(sys.argv)>2:
+        print(sys.argv[1])
+        print(sys.argv[2])
+        arg1=sys.argv[1]
+        arg2=sys.argv[2]
+        if arg1 == "-h":
+            print("USAGE: blast101_run [Sequence / Path to FASTA file] [Database file]")
+            exit()
+        elif os.path.isfile(arg1) and arg1.endswith(".fasta"):
+              qsequence=get_fasta_from_file(arg1)
+              if not qsequence:
+                    print("ERROR: Invalid or empty FASTA file.")
+                    exit()
+        elif validate_sequence(arg1):
+              qsequence=arg1.upper()
+        else:
+             print("ERROR: Invalid sequence format. Must be a valid protein sequence.")
+             exit()
+     
+        if os.path.isfile(arg2) and arg2.endswith(".fasta"):
+            database=arg2
+            with open(database,"r") as databasefile:
+                    for seq in SeqIO.parse(databasefile,"fasta"):
+                        lib_seqs_list.append(str(seq.seq))
+                    lib_seq_length=len("".join(lib_seqs_list))
+                    lib_seqs=len(lib_seqs_list)
+            if not os.path.exists(os.getcwd()+"/logs"):
+                os.makedirs(os.getcwd()+"/logs")
+            with open("my_align_run.log","w") as log:
+                pass
+            time.sleep(0.1)
+            query_sequence = tdict.create_word_dict(qsequence)
+            blast101_run()
+        else:
+            print("ERROR: malformed statement.\nUSAGE: blast101_run [Sequence / Path to FASTA file] [Database file]")
+            exit()
     else:
         print("ERROR: malformed statement.\nUSAGE: blast101_run [Sequence / Path to FASTA file] [Database file]")
         exit()
-
-else:
-    print("ERROR: malformed statement.\nUSAGE: blast101_run [Sequence / Path to FASTA file] [Database file]")
-    exit()
+                #import configparser query_sequence = tdict.create_word_dict(str(record.seq))
+                #config = configparser.ConfigParser()
+                #config.read("settings.ini")
+                #config["DEFAULT"]["current_library_size"] = str(lib_seq_length) 
+                #config["DEFAULT"]["current_library_seq_count"] = str(lib_seqs)  
+                #with open("settings.ini","w") as configfile:  
+                #  config.write(configfile)

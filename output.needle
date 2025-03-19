@@ -1,0 +1,78 @@
+########################################
+# Program: needle
+# Rundate: Tue 18 Mar 2025 20:59:47
+# Commandline: needle
+#    -asequence fastaseq.fasta
+#    -bsequence mousefasta.fasta
+#    -gapopen 10
+#    -gapextend 0.5
+#    -outfile output.needle
+# Align_format: srspair
+# Report_file: output.needle
+########################################
+
+#=======================================
+#
+# Aligned_sequences: 2
+# 1: 001R_FRG3G
+# 2: NANOG_MOUSE
+# Matrix: EBLOSUM62
+# Gap_penalty: 10.0
+# Extend_penalty: 0.5
+#
+# Length: 522
+# Identity:      10/522 ( 1.9%)
+# Similarity:    17/522 ( 3.3%)
+# Gaps:         483/522 (92.5%)
+# Score: 20.0
+# 
+#
+#=======================================
+
+001R_FRG3G         0 --------------------------------------------------      0
+                                                                       
+NANOG_MOUSE        1 MSVGLPGPHSLPSSEEASNSGNASSMPAVFHPENYSCLQGSATEMLCTEA     50
+
+001R_FRG3G         0 --------------------------------------------------      0
+                                                                       
+NANOG_MOUSE       51 ASPRPSSEDLPLQGSPDSSTSPKQKLSSPEADKGPEEEENKVLARKQKMR    100
+
+001R_FRG3G         0 --------------------------------------------------      0
+                                                                       
+NANOG_MOUSE      101 TVFSQAQLCALKDRFQKQKYLSLQQMQELSSILNLSYKQVKTWFQNQRMK    150
+
+001R_FRG3G         0 --------------------------------------------------      0
+                                                                       
+NANOG_MOUSE      151 CKRWQKNQWLKTSNGLIQKGSAPVEYPSIHCSYPQGYLVNASGSLSMWGS    200
+
+001R_FRG3G         0 --------------------------------------------------      0
+                                                                       
+NANOG_MOUSE      201 QTWTNPTWSSQTWTNPTWNNQTWTNPTWSSQAWTAQSWNGQPWNAAPLHN    250
+
+001R_FRG3G         1 -------------MAFSAEDVLKEYDRRRRMEALLLSLYYPNDRKL---L     34
+                                  ..|||.|:....:..|...|     ::...:.|   |
+NANOG_MOUSE      251 FGEDFLQPYVQLQQNFSASDLEVNLEATRESHA-----HFSTPQALELFL    295
+
+001R_FRG3G        35 DYKEWSPPRVQVECPKAPVEWNNPPSEKGLIVGHFSGIKYKGEKAQASEV     84
+                     :|....|..:                                        
+NANOG_MOUSE      296 NYSVTPPGEI----------------------------------------    305
+
+001R_FRG3G        85 DVNKMCCWVSKFKDAMRRYQGIQTCKIPGKVLSDLDAKIKAYNLTVEGVE    134
+                                                                       
+NANOG_MOUSE      305 --------------------------------------------------    305
+
+001R_FRG3G       135 GFVRYSRVTKQHVAAFLKELRHSKQYENVNLIHYILTDKRVDIQHLEKDL    184
+                                                                       
+NANOG_MOUSE      305 --------------------------------------------------    305
+
+001R_FRG3G       185 VKDFKALVESAHRMRQGHMINVKYILYQLLKKHGHGPDGPDILTVKTGSK    234
+                                                                       
+NANOG_MOUSE      305 --------------------------------------------------    305
+
+001R_FRG3G       235 GVLYDDSFRKIYTDLGWKFTPL    256
+                                           
+NANOG_MOUSE      305 ----------------------    305
+
+
+#---------------------------------------
+#---------------------------------------

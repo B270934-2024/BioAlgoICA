@@ -18,7 +18,6 @@ import seaborn as sns
 import numpy as np
 import scipy.stats as ss
 
-
 ps.read()
 
 def build_fit():
@@ -55,14 +54,14 @@ def build_fit():
 #https://www.cs.cmu.edu/~durand/03-711/2015/Lectures/DBSearchingAndBlast-statistics.pdf
 #score from https://academic.oup.com/bioinformatics/article/40/3/btae097/7629128
 def get_bit_score(raw_score, k, scale):
+    #from blast_101_search.py import lib_seq_length,lib_seqs
     #Calculate bit score from E value
-
     #total count of bases in the database
     n = int(ps.settings["DEFAULT"]["current_library_size"])
-
+    #n = lib_seq_length
     #count of seqs
     m = int(ps.settings["DEFAULT"]["current_library_seq_count"])
-
+    #m = lib_seqs
     e = get_expect(raw_score,k,scale)
 
     #average seq size

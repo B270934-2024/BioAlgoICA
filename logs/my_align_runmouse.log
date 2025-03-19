@@ -1,0 +1,201 @@
+###############################################################
+BLAST Hits  for SwissProt Database Search
+Max Number of Results to return:  200
+Matrix: Blosum62, Gap Weight: -8
+Query Sequence:
+PWNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+###############################################################
+Name	SWScore	ExScore	BitScore	Expect	SeqIndex
+
+"sp|Q80Z64|NANOG_MOUSE Homeobox protein ..."	320.0	320.0	nan	0.00000E+00	15
+
+"sp|A1YG92|NANG2_PANPA Putative homeobox..."	103.0	81.0	39	7.55209E-06	13
+
+"sp|Q8N7R0|NANG2_HUMAN Putative homeobox..."	94.0	78.0	37	3.16795E-05	12
+
+"sp|Q4JM65|NANOG_BOVIN Homeobox protein ..."	93.0	73.0	37	3.71508E-05	14
+
+"sp|Q4WVV6|MDM10_ASPFU Mitochondrial dis..."	60.0	60.0	30	0.00708	11
+
+"sp|O46491|CP7A1_PIG Cytochrome P450 7A1..."	60.0	16.0	30	0.00708	9
+
+"sp|B0Y240|MDM10_ASPFC Mitochondrial dis..."	59.0	59.0	29	0.00830	10
+
+"sp|P22680|CP7A1_HUMAN Cytochrome P450 7..."	58.0	16.0	29	0.00971	8
+
+"sp|Q50LG3|AFT91_ALTAL Highly reducing p..."	57.0	41.0	29	0.01137	7
+
+"sp|B2GEY3|ADDB_LIMF3 ATP-dependent heli..."	53.0	23.0	28	0.02129	6
+
+"sp|Q09406|A16L2_CAEEL Autophagic-relate..."	49.0	29.0	27	0.03952	5
+
+"sp|P0C9T4|5054R_ASFP4 Protein MGF 505-4..."	48.0	45.0	27	0.04602	4
+
+"sp|Q25538|1433_NEOCA 14-3-3 protein hom..."	45.0	43.0	26	0.07215	3
+
+"sp|Q197D5|025R_IIV3 Uncharacterized pro..."	36.0	25.0	24	0.24313	2
+
+"sp|Q6GZV4|021L_FRG3G Uncharacterized pr..."	29.0	19.0	24	0.46774	1
+
+"sp|Q6GZX4|001R_FRG3G Putative transcrip..."	27.0	18.0	23	0.52565	0
+
+
+Result number :  1 Sequence File Index:  15
+ Name:  >sp|Q80Z64|NANOG_MOUSE Homeobox protein NANOG OS=Mus musculus OX=10090 GN=Nanog PE=1 SV=1 Score:  320.0
+SWScore:  320.0 Bit Score:  23 Expect:  0.52565
+
+Final Alignment, Score: 320
+PWNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+PWNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+
+Result number :  2 Sequence File Index:  13
+ Name:  >sp|A1YG92|NANG2_PANPA Putative homeobox protein NANOG2 OS=Pan paniscus OX=9597 GN=NANOGP1 PE=5 SV=1 Score:  81.0
+SWScore:  103.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 103
+WNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRE--S---H-A-HFSTPQALELFLNYS
+|| .|..| ||. ||  .|.| |  |||||. |||. |  .   . | .|||||...||||||
+WN-SPFYNCGEESLQSCMQFQPNSPASDLEAALEAAGEGLNVIQQTARYFSTPQTMDLFLNYS
+
+Result number :  3 Sequence File Index:  12
+ Name:  >sp|Q8N7R0|NANG2_HUMAN Putative homeobox protein NANOG2 OS=Homo sapiens OX=9606 GN=NANOGP1 PE=5 SV=1 Score:  78.0
+SWScore:  94.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 94
+WNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRE--S---H-A-HFSTPQALELFLNYSV
+|| .|..| ||. ||  .|.| |  ||||.. |||. |  .   . . .|.|||...||||||.
+WN-SPFYNCGEESLQSCMQFQPNSPASDLQAALEAAGEGLNVIQQTTRYFNTPQTMDLFLNYSM
+
+Result number :  4 Sequence File Index:  14
+ Name:  >sp|Q4JM65|NANOG_BOVIN Homeobox protein NANOG OS=Bos taurus OX=9913 GN=NANOG PE=2 SV=1 Score:  73.0
+SWScore:  93.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 93
+PWNAAPLHNFGEDFLQPYVQLQQNFSASDLEVNLEATRESH
+|||   ..|. |.|||| .|||||  . |||..| .. |..
+PWN-NQFNNYMEEFLQPGIQLQQNSPVCDLEATLGTAGENY
+
+Result number :  5 Sequence File Index:  11
+ Name:  >sp|Q4WVV6|MDM10_ASPFU Mitochondrial distribution and morphology protein 10 OS=Aspergillus fumigatus (strain ATCC MYA-4609 / CBS 101355 / FGSC A1100 / Af293) OX=330879 GN=mdmB PE=3 SV=1 Score:  60.0
+SWScore:  60.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 60
+DFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+|..|       |.....   .| || .|   ||||. |.. |.  .||
+DYIQLAFAEATNWNCDNSYSSLTATAQSLLDFSTPERLRVHLSSLATP
+
+Result number :  6 Sequence File Index:  9
+ Name:  >sp|O46491|CP7A1_PIG Cytochrome P450 7A1 OS=Sus scrofa OX=9823 GN=CYP7A1 PE=3 SV=1 Score:  16.0
+SWScore:  60.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 60
+EDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+|. . ||.    .|.|. ||  |.|....|.|. | | .  .... ..|
+ENGIIPYLGCALQFGANPLEF-LRANQRKHGHIFTCQLMGNYVHFITNP
+
+Result number :  7 Sequence File Index:  10
+ Name:  >sp|B0Y240|MDM10_ASPFC Mitochondrial distribution and morphology protein 10 OS=Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) OX=451804 GN=mdmB PE=3 SV=1 Score:  59.0
+SWScore:  59.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 59
+DFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+|..|       |.. ..   .| || .|   ||||. |.. |.  .||
+DYIQLAFAEATNWNRDNSYSSLTATAQSLLDFSTPERLRVHLSSLATP
+
+Result number :  8 Sequence File Index:  8
+ Name:  >sp|P22680|CP7A1_HUMAN Cytochrome P450 7A1 OS=Homo sapiens OX=9606 GN=CYP7A1 PE=1 SV=2 Score:  16.0
+SWScore:  58.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 58
+EDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+|. | ||.    .|.|. ||  |.|....|.|  | . .  .... ..|
+ENGLIPYLGCALQFGANPLEF-LRANQRKHGHVFTCKLMGKYVHFITNP
+
+Result number :  9 Sequence File Index:  7
+ Name:  >sp|Q50LG3|AFT91_ALTAL Highly reducing polyketide synthase AFT9-1 OS=Alternaria alternata OX=5599 GN=AFT9-1 PE=3 SV=1 Score:  41.0
+SWScore:  57.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 57
+PYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYS
+||.|| |.. |.||.. |.   ||.  | |   ||  |. |
+PYAQL-QHLPAADLHTALDMLIESRKGFCTQAELEETLRAS
+
+Result number :  10 Sequence File Index:  6
+ Name:  >sp|B2GEY3|ADDB_LIMF3 ATP-dependent helicase/deoxyribonuclease subunit B OS=Limosilactobacillus fermentum (strain NBRC 3956 / LMG 18251) OX=334390 GN=rexB PE=3 SV=1 Score:  23.0
+SWScore:  53.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 53
+GEDFLQPYVQLQQN-FSASDLEVNLEATRESHAHFSTPQAL
+| | |.| |  | |   .||  |..|   |. |.|. |. |
+GVDVLDPIVLNQPNQRRVSDALVGVEEWMEADARFALPDRL
+
+Result number :  11 Sequence File Index:  5
+ Name:  >sp|Q09406|A16L2_CAEEL Autophagic-related protein 16.2 OS=Caenorhabditis elegans OX=6239 GN=atg-16.2 PE=1 SV=2 Score:  29.0
+SWScore:  49.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 49
+VQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSVTP
+........ .  ..||   | | |  ..|..|. |.  .| |
+MRIREQIAKATADLNLGDERASSAFGTSPETLDEFMMTDVLP
+
+Result number :  12 Sequence File Index:  4
+ Name:  >sp|P0C9T4|5054R_ASFP4 Protein MGF 505-4R OS=African swine fever virus (isolate Tick/South Africa/Pretoriuskop Pr4/1996) OX=561443 GN=Pret-040 PE=3 SV=1 Score:  45.0
+SWScore:  48.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 48
+LHNFGEDFLQPYVQLQQNFSASDLEVNLEATRESHAHFSTPQALELFLNYSV
+..|  . .|. ... || .| .|.|  | ..  . |  .| . |  .||||.
+VENDHRKILDYFIRRQQYLSREDIENLLLSAITNCASKKTLNLLLSYLNYSI
+
+Result number :  13 Sequence File Index:  3
+ Name:  >sp|Q25538|1433_NEOCA 14-3-3 protein homolog OS=Neospora caninum OX=29176 PE=2 SV=1 Score:  43.0
+SWScore:  45.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 45
+TRESHAHFSTPQALELFLNYSV
+| |.|.  . |  | | |||||
+TAEGHSPATHPIRLGLALNYSV
+
+Result number :  14 Sequence File Index:  2
+ Name:  >sp|Q197D5|025R_IIV3 Uncharacterized protein 025R OS=Invertebrate iridescent virus 3 OX=345201 GN=IIV3-025R PE=3 SV=1 Score:  25.0
+SWScore:  36.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 36
+TRESHAHFSTPQALELFLNYSVT
+..|.  ||..|  || . . .||
+SKEGFHHFQSPTLLETIDQRGVT
+
+Result number :  15 Sequence File Index:  1
+ Name:  >sp|Q6GZV4|021L_FRG3G Uncharacterized protein 021L OS=Frog virus 3 (isolate Goorha) OX=654924 GN=FV3-021L PE=4 SV=1 Score:  19.0
+SWScore:  29.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 29
+SASDLEVNLEATRESHAHFSTPQALELFLNYSV
+..|| ||  .   |...  |  .  .|...| |
+TSSDPEVVDDEDDEDQSDDSDEERQRLYFQYMV
+
+Result number :  16 Sequence File Index:  0
+ Name:  >sp|Q6GZX4|001R_FRG3G Putative transcription factor 001R OS=Frog virus 3 (isolate Goorha) OX=654924 GN=FV3-001R PE=4 SV=1 Score:  18.0
+SWScore:  27.0 Bit Score:  23 Expect:  0.52565
+Building traceback...
+
+Final Alignment, Score: 27
+AHFSTPQALELFLNYS-VT
+|.  | ...| |..|| ||
+AYNLTVEGVEGFVRYSRVT
+~~~~~~~~~Finished~~~~~~~~~
